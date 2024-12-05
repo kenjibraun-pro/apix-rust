@@ -138,7 +138,7 @@ etag: W/"136-fTr038fftlG9yIOWHGimupdrQDg"
   }
 ]
 ```
-
+           
 ## Context
 
 Apix handle contexts gracefully. Contexts are named resources to handle:
