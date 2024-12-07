@@ -92,3 +92,17 @@ impl HttpDisplay for Request {
   }
 }
 
+impl HttpDisplay for Response {
+  fn print(&self, theme: &str, enable_color: bool) -> Result<()> {
+    let mut output = format!(
+      "{protocol:?} {status}\n",
+      protocol = self.version(),
+      status = self.status()
+    );
+    for (key, value) in self.headers() {
+      output.push_str(&format!("{}: {}\n", key.as_str(), value.to_str()?));
+    }
+    pretty_print(output, theme, "yaml", enable_color)?;
+    Ok(())
+  }
+}
