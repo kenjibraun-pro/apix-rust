@@ -11,13 +11,13 @@ use url::Position;
 pub trait HttpDisplay {
   fn print(&self, theme: &str, enable_color: bool) -> Result<()>;
 }
-
+             
 pub fn print_separator() {
   if let Some((width, _)) = dimensions_stdout() {
     println!("{}", "─".repeat(width));
   }
-}
-
+}                    
+                         
 pub fn pretty_print(content: String, theme: &str, language: &str, enable_color: bool) -> Result<()> {
   match language {
     "json" => {
