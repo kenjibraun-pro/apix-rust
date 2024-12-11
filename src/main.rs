@@ -43,7 +43,7 @@ async fn handle_import(_url: &str) -> Result<()> {
   // println!("api {}", serde_json::to_string(&result)?);
   Ok(())
 }
-
+             
 #[tokio::main]
 async fn main() -> Result<()> {
   let is_output_terminal = atty::is(atty::Stream::Stdout);
@@ -56,7 +56,7 @@ async fn main() -> Result<()> {
         let mut app = build_cli();
         print_completions(generator, &mut app);
       }
-    }
+    }                
     Some(("init", _)) => {
       run_cmd! {git --version}.map_err(|_| anyhow!("git command not found"))?;
       // create .gitignore
@@ -75,7 +75,7 @@ async fn main() -> Result<()> {
         git commit -m "Apix init commit"
       }
       .map_err(|e| anyhow!("Failed to init apix repository\ncause: {}", e))?;
-    }
+    }               
     Some(("config", matches)) => match matches.subcommand() {
       Some(("list", _)) => {
         pretty_print(
@@ -84,7 +84,7 @@ async fn main() -> Result<()> {
           "yaml",
           is_output_terminal,
         )?;
-      }
+      }                   
       Some(("set", matches)) => {
         if let (Some(key), Some(value)) = (matches.value_of("name"), matches.value_of("value")) {
           if let Some(old_value) = ApixConfiguration::once().set(key.to_string(), value.to_string()) {
