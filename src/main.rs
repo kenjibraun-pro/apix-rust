@@ -101,7 +101,7 @@ async fn main() -> Result<()> {
           }
           ApixConfiguration::once().save()?;
         }
-      }
+      }                                     
       Some(("get", matches)) => {
         let key = matches.value_of("name").unwrap();
         if let Some(value) = ApixConfiguration::once().get(key) {
