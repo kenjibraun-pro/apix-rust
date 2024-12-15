@@ -211,8 +211,8 @@ async fn main() -> Result<()> {
             }
             None => {
               println!("No resource of type {} where found with name {}", resource, name);
-            }
-          }
+            }                            
+          }                         
         }
       }
       Some(("get", matches)) => {
