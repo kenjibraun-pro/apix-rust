@@ -42,7 +42,7 @@ pub fn pretty_print(content: String, theme: &str, language: &str, enable_color: 
     }
   }
   Ok(())
-}
+}                                     
 
 pub fn pretty_print_file(path: PathBuf, theme: &str, language: &str, enable_color: bool) -> Result<()> {
   PrettyPrinter::new()
@@ -56,7 +56,7 @@ pub fn pretty_print_file(path: PathBuf, theme: &str, language: &str, enable_colo
     .print()
     .map_err(|err| anyhow::anyhow!("Failed to print result: {:#}", err))?;
   Ok(())
-}
+}                         
 
 impl HttpDisplay for Request {
   fn print(&self, theme: &str, enable_color: bool) -> Result<()> {
