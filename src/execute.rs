@@ -45,7 +45,7 @@ fn ask_for_required_parameters(
           Ok((parameter.name.clone(), Value::String(param.clone())))
         } else {
           Ok((parameter.name.clone(), parameter.ask()?))
-        }
+        }                      
       })
       .collect(),
     None => request
