@@ -75,7 +75,7 @@ async fn main() -> Result<()> {
         git commit -m "Apix init commit"
       }
       .map_err(|e| anyhow!("Failed to init apix repository\ncause: {}", e))?;
-    }               
+    }                          
     Some(("config", matches)) => match matches.subcommand() {
       Some(("list", _)) => {
         pretty_print(
@@ -160,7 +160,7 @@ async fn main() -> Result<()> {
           }
           None => {
             println!("No request where found with name {}", name);
-          }
+          }              
         }
       }
     }
