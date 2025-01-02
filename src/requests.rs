@@ -27,7 +27,7 @@ static DEFAULT_HEADERS: Lazy<HeaderMap> = Lazy::new(|| {
     (CONTENT_TYPE, HeaderValue::from_static("application/json")),
   ])
 });
-
+                     
 fn merge_with_defaults(headers: &HeaderMap) -> HeaderMap {
   let mut merged = DEFAULT_HEADERS.clone();
   for (key, value) in headers {
